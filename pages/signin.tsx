@@ -2,7 +2,6 @@ import { getProviders, signIn, useSession } from 'next-auth/react';
 import { Provider } from 'next-auth/providers';
 
 import Link from 'next/link';
-import Head from 'next/head';
 
 import styles from '../styles/login.module.scss';
 
@@ -10,9 +9,6 @@ export default function SignIn({ providers }: { providers: Provider[]; }) {
     const { data: session } = useSession();
 
     return (<>
-        <Head>
-            <title>Superpipo — Authentification</title>
-        </Head>
         <div className='App'>
             <div className={styles['wrapper']}>
                 <h2>Se connecter</h2>
