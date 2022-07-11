@@ -1,9 +1,15 @@
-import styles from '../styles/Home.module.css';
+import { useSession } from 'next-auth/react';
+import styles from '../styles/index.module.scss';
 
-export default function Index(): JSX.Element {
+function Index(): JSX.Element {
+	const { data: session } = useSession();
+	console.log(session);
 	return (<>
 		<div className={styles.container}>
 			Hello
 		</div>
 	</>);
 }
+
+Index.authRequired = true;
+export default Index;
